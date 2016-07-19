@@ -14,7 +14,7 @@ class ChessNotation:
             self.black_move = black
 
         def __str__(self):
-            return self.white_move, self.black_move
+            return self.white_move + ' ' + self.black_move
 
     def __init__(self):
         self.history = {}
@@ -36,4 +36,11 @@ class ChessNotation:
 
     def get_notation_sheet(self):
         return self.history
+
+    def __str__(self):
+        tmp = ''
+        for movenum in range(1, len(self.history) + 1):
+            tmp += ' ' + str(movenum) + '. ' + str(self.history.get(movenum))
+        return tmp
+
 

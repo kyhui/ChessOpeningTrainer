@@ -17,7 +17,7 @@ def get_piece_from_notation(abbreviation):
 
 
 class Piece(object):
-    __slots__ = ('fen', 'color')
+    __slots__ = ('fen', 'color', 'value')
 
     def __init__(self, fen):
         self.fen = fen
@@ -45,25 +45,25 @@ class Piece(object):
 
 
 class Pawn(Piece):
-    None
+    value = 1
 
 
 class Knight(Piece):
-    None
+    value = 3
 
 
 class Rook(Piece):
-    None
+    value = 5
 
 
 class Bishop(Piece):
-    None
+    value = 3.5
 
 
 class Queen(Piece):
-    None
+    value = 9
 
 
 class King(Piece):
-    None
+    value = 0
 
