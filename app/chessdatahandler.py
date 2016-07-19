@@ -61,10 +61,10 @@ def crunch_data(relative_data_file_name, relative_training_data_file):
 def read_data_into_memory():
     memory_db = {}
     try:
-        reader = csv.DictReader(open(BASE_DIR + '/opening_trainer/reports/trainerdb.csv', 'rb'))
+        reader = csv.DictReader(open(BASE_DIR + '/app/reports/trainerdb.csv', 'rb'))
     except IOError:
-        crunch_data('/opening_trainer/openings/test.pgn', '/opening_trainer/reports/trainerdb.csv')
-        reader = csv.DictReader(open(BASE_DIR + '/opening_trainer/reports/trainerdb.csv', 'rb'))
+        crunch_data('/app/openings/test.pgn', '/app/reports/trainerdb.csv')
+        reader = csv.DictReader(open(BASE_DIR + '/app/reports/trainerdb.csv', 'rb'))
 
     for row in reader:
         memory_db[row['position']] = (row['response'], row['correct_move'])
