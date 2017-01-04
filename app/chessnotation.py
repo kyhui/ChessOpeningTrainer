@@ -3,6 +3,7 @@ class ChessNotation:
     class Move:
         white_move = None
         black_move = None
+        rating = None
 
         def __init__(self):
             None
@@ -12,6 +13,9 @@ class ChessNotation:
 
         def add_black_move(self, black):
             self.black_move = black
+
+        def add_rating(self, rating):
+            self.rating = rating
 
         def __str__(self):
             return self.white_move + ' ' + self.black_move
@@ -36,6 +40,10 @@ class ChessNotation:
 
     def get_notation_sheet(self):
         return self.history
+
+    def add_rating(self, movenum, rating):
+        move = self.history.get(movenum)
+        move.add_rating(rating)
 
     def __str__(self):
         tmp = ''
